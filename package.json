@@ -1,0 +1,25 @@
+{
+    "name": "a-tu-tu",
+    "private": true,
+    "scripts": {
+        "commit": "cz-customizable",
+        "build": "turbo build",
+        "dev": "turbo dev",
+        "dev:pwa": "turbo dev --filter=pwa",
+        "dev:api": "turbo dev --filter=api",
+        "dev:bot": "turbo dev --filter=bot",
+        "lint": "turbo lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    },
+    "devDependencies": {
+        "cz-conventional-changelog": "^3.3.0",
+        "cz-customizable": "^7.0.0",
+        "prettier": "^3.2.5",
+        "turbo": "^2.0.9",
+        "typescript": "^5.4.5"
+    },
+    "packageManager": "pnpm@8.15.6",
+    "engines": {
+        "node": ">=18"
+    }
+}
