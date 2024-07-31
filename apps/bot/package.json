@@ -6,7 +6,9 @@
     "scripts": {
         "dev": "nodemon ./index.ts",
         "register": "ts-node ./scripts/registerCommands.ts",
-        "unregister": "ts-node ./scripts/unregisterCommands.ts"
+        "unregister": "ts-node ./scripts/unregisterCommands.ts",
+        "build": "tsc -p .",
+        "start": "node ./build/index.js"
     },
     "dependencies": {
         "@discordjs/rest": "^2.3.0",

@@ -8,6 +8,8 @@
         "dev:pwa": "turbo dev --filter=pwa",
         "dev:api": "turbo dev --filter=api",
         "dev:bot": "turbo dev --filter=bot",
+        "build:bot": "turbo build --filter=bot",
+        "start:bot": "turbo start --filter=bot",
         "register": "turbo register",
         "unregister": "turbo unregister",
         "lint": "turbo lint",

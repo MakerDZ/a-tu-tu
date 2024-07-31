@@ -21,6 +21,10 @@
       "unregister": {
           "cache": false,
           "persistent": true
+      },
+      "start": {
+          "dependsOn": ["^build"],
+          "inputs": ["$TURBO_DEFAULT$", ".env*"]
       }
   }
 }
