@@ -4,7 +4,14 @@
     "description": "",
     "main": "index.ts",
     "scripts": {
-        "dev": "nodemon ./index.ts"
+        "dev": "nodemon ./index.ts",
+        "register": "ts-node ./scripts/registerCommands.ts",
+        "unregister": "ts-node ./scripts/unregisterCommands.ts"
+    },
+    "dependencies": {
+        "@discordjs/rest": "^2.3.0",
+        "discord.js": "^14.15.3",
+        "dotenv": "^16.4.5"
     },
     "devDependencies": {
         "@types/node": "^18.18.8",
@@ -15,10 +22,5 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "@discordjs/rest": "^2.3.0",
-        "discord.js": "^14.15.3",
-        "dotenv": "^16.4.5"
-    }
+    "license": "ISC"
 }

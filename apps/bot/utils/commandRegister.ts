@@ -1,6 +1,6 @@
-export default async function loadUserCommands() {}
+import 'dotenv/config';
 
-export async function DiscordRequest(endpoint: any, options: any) {
+export async function DiscordRequest(endpoint: string, options: any) {
     // append endpoint to root API URL
     const url = 'https://discord.com/api/v10/' + endpoint;
     // Stringify payloads
@@ -9,8 +9,7 @@ export async function DiscordRequest(endpoint: any, options: any) {
         headers: {
             Authorization: `Bot ${process.env.BOT_TOKEN}`,
             'Content-Type': 'application/json; charset=UTF-8',
-            'User-Agent':
-                'DiscordBot (https://github.com/discord/discord-example-app, 1.0.0)',
+            'User-Agent': 'DiscordBot By Zed',
         },
         ...options,
     });
@@ -24,7 +23,10 @@ export async function DiscordRequest(endpoint: any, options: any) {
     return res;
 }
 
-export async function InstallGlobalCommands(appId: any, commands: any) {
+export async function InstallGlobalCommands(
+    appId: string,
+    commands: Array<any>
+) {
     // API endpoint to overwrite global commands
     const endpoint = `applications/${appId}/commands`;
 
