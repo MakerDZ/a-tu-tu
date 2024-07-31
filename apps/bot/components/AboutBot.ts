@@ -13,6 +13,11 @@ export default function AboutBot() {
             name: 'မင်္ဂလာပါ။',
             iconURL:
                 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Folded%20hands/Default/3D/folded_hands_3d_default.png',
+        })
+        .setFooter({
+            text: 'Coming Soon',
+            iconURL:
+                'https://emoji.discadia.com/emojis/945b82d5-0034-417a-b8e9-a1bbb4dcd1bf.GIF',
         });
     return { embeds: [reply] };
 }

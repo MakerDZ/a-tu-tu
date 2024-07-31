@@ -26,6 +26,22 @@ const ABOUT_COMMAND = {
     contexts: [0, 1, 2],
 };
 
+const BURMESE_TEXT_COMMAND = {
+    name: 'burmese_text',
+    type: 1,
+    description: 'မြန်မာ font ကိုမှန်​အောင်ပို့​ပေးနိုင်ပါတယ်။',
+    integration_types: [1],
+    contexts: [0, 2],
+    options: [
+        {
+            name: 'message',
+            description: 'မိမိပို့လို​သောမြန်မာစာ',
+            type: 3,
+            required: true,
+        },
+    ],
+};
+
 // USER_INSTALL (BOT_DM)
 const _COMMAND = {
     name: '',
@@ -35,6 +51,6 @@ const _COMMAND = {
     contexts: [1],
 };
 
-const ALL_COMMANDS = [HEALTH_COMMAND, ABOUT_COMMAND];
+const ALL_COMMANDS = [HEALTH_COMMAND, ABOUT_COMMAND, BURMESE_TEXT_COMMAND];
 
 InstallGlobalCommands(process.env.CLIENT_ID!, ALL_COMMANDS);
