@@ -12,6 +12,9 @@
         "start:bot": "turbo start --filter=bot",
         "register": "turbo register",
         "unregister": "turbo unregister",
+        "db:generate": "turbo db:generate",
+        "db:push": "turbo db:push",
+        "db:view": "turbo db:view",
         "lint": "turbo lint",
         "format": "prettier --write \"**/*.{ts,tsx,md}\""
     },

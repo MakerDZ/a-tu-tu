@@ -25,6 +25,15 @@
       "start": {
           "dependsOn": ["^build"],
           "inputs": ["$TURBO_DEFAULT$", ".env*"]
+      },
+      "db:generate": {
+          "cache": false
+      },
+      "db:push": {
+          "cache": false
+      },
+      "db:view": {
+          "cache": false
       }
   }
 }
