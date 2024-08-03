@@ -1,4 +1,7 @@
+import { Player } from 'discord-player';
 import { Client, GatewayIntentBits, ActivityType, Partials } from 'discord.js';
+import { botConfig } from '../config/bot';
+import { YoutubeiExtractor } from 'discord-player-youtubei';
 
 const client = new Client({
     intents: [
@@ -8,6 +11,7 @@ const client = new Client({
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.GuildVoiceStates,
     ],
     partials: [Partials.Channel, Partials.Message],
     presence: {
@@ -21,5 +25,8 @@ const client = new Client({
         ],
     },
 });
+
+const player = new Player(client, botConfig.opt.discordPlayer);
+player.extractors.register(YoutubeiExtractor, {});
 
 export default client;

@@ -1,7 +1,7 @@
 import { Client, CommandInteraction, Interaction } from 'discord.js';
 
 import { join } from 'path';
-import actionsLoader from '../../utils/actionLoader';
+import actionsLoader from '../../../utils/actionLoader';
 
 let actions: any = null;
 const actionsFolder = join(__dirname, '/actions');

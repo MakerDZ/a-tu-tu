@@ -1,5 +1,5 @@
 import { CommandInteraction, GuildMember } from 'discord.js';
-import { ErrorMesssage } from '../../../components/ErrorMessage';
+import { ErrorMesssage } from '../../../../components/ErrorMessage';
 
 export default {
     name: 'add_my_server',

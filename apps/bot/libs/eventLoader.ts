@@ -2,7 +2,7 @@ import client from './bot';
 import * as fs from 'fs';
 import { join } from 'path';
 
-const eventsFolder = join(__dirname, '..', 'events');
+const eventsFolder = join(__dirname, '..', 'events/clients');
 export default function loadEvents() {
     const eventFiles = fs
         .readdirSync(eventsFolder)

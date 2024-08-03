@@ -1,5 +1,5 @@
 import { CommandInteraction } from 'discord.js';
-import AboutBot from '../../../components/AboutBot';
+import AboutBot from '../../../../components/AboutBot';
 
 export default {
     name: 'about',

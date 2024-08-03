@@ -1,5 +1,5 @@
 import { AttachmentBuilder, CommandInteraction } from 'discord.js';
-import TextToImage from '../../../utils/BurmeseTextToImage';
+import TextToImage from '../../../../utils/BurmeseTextToImage';
 import { EmbedBuilder } from 'discord.js';
 
 export default {

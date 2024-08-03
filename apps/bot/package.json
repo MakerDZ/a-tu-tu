@@ -11,11 +11,21 @@
         "start": "node ./build/index.js"
     },
     "dependencies": {
-        "@repo/database": "workspace:*",
+        "@discord-player/extractor": "^4.3.1",
+        "@discordjs/opus": "^0.9.0",
         "@discordjs/rest": "^2.3.0",
+        "@discordjs/voice": "^0.17.0",
+        "@distube/ytdl-core": "^4.11.8",
+        "@evan/opus": "^1.0.3",
+        "@repo/database": "workspace:*",
         "canvas": "^2.11.2",
+        "discord-player": "6.6.9-dev.1",
+        "discord-player-youtubei": "^1.2.4",
         "discord.js": "^14.15.3",
         "dotenv": "^16.4.5",
+        "ffmpeg-static": "^5.0.2",
+        "ms": "^3.0.0-canary.1",
+        "play-dl": "^1.9.7",
         "text-to-image": "^5.2.0"
     },
     "devDependencies": {
