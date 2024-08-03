@@ -1,5 +1,6 @@
 import { useMainPlayer } from 'discord-player';
 import { BodyMessage } from '../../components/BodyMessage';
+import { queueMap } from '../../store/queueMap';
 
 let latencyMessage: any = null;
 export let playerState = {
@@ -10,6 +11,9 @@ export const playerEvents = () => {
     const player = useMainPlayer();
     player.events.on('playerStart', (queue, track) => {
         // Emitted when the player starts to play a song
+        const trackInQueue = queueMap.get(track.id);
+        queueMap.updatePlayed(track.id, true);
+
         queue.metadata.message.channel.send(
             BodyMessage({
                 authorIconURL: queue.metadata.message.author.avatarURL()!,
@@ -21,6 +25,7 @@ export const playerEvents = () => {
                         value: `**\`${track.duration}\` [${track.title}](${track.url})**`,
                     },
                 ],
+                footerText: `${trackInQueue?.index}`,
                 showTimestamp: true,
             })
         );
@@ -28,6 +33,14 @@ export const playerEvents = () => {
 
     player.events.on('audioTrackAdd', (queue, track) => {
         // Emitted when the player adds a single song to its queue
+        const lastIndex = queueMap.getLastIndex();
+        const index = lastIndex === undefined ? 0 : lastIndex + 1;
+        queueMap.set(track.id, {
+            index,
+            track,
+            played: false,
+        });
+
         queue.metadata.message.channel.send(
             BodyMessage({
                 authorIconURL: queue.metadata.message.author.avatarURL()!,
@@ -39,21 +52,27 @@ export const playerEvents = () => {
                         value: `**\`${track.duration}\` [${track.title}](${track.url})**`,
                     },
                 ],
+                footerText: `${index}`,
                 showTimestamp: true,
             })
         );
     });
 
-    player.events.on('audioTracksAdd', (queue, track) => {
+    player.events.on('audioTracksAdd', (queue, tracks) => {
         // Emitted when the player adds multiple songs to its queue
-        queue.metadata.message.channel.send(`Multiple Track's queued`);
+        tracks.map((track) => {
+            const lastIndex = queueMap.getLastIndex();
+            const index = lastIndex === undefined ? 0 : lastIndex + 1;
+            queueMap.set(track.id, {
+                index,
+                track,
+                played: false,
+            });
+        });
     });
 
     player.events.on('playerSkip', (queue, track) => {
         // Emitted when the audio player fails to load the stream for a song
-        queue.metadata.message.channel.send(
-            `Skipping **${track.title}** due to an issue!`
-        );
     });
 
     player.events.on('playerPause', (queue) => {
@@ -66,20 +85,28 @@ export const playerEvents = () => {
 
     player.events.on('disconnect', (queue) => {
         // Emitted when the bot leaves the voice channel
-        queue.metadata.message.channel.send(
-            'Looks like my job here is done, leaving now!'
-        );
+        BodyMessage({
+            bodyMessage: 'vc က​နေ disconnect ခံလိုက်ရပါပြီ။',
+        });
     });
     player.events.on('emptyChannel', (queue) => {
         // Emitted when the voice channel has been empty for the set threshold
         // Bot will automatically leave the voice channel with this event
         queue.metadata.message.channel.send(
-            `Leaving because no vc activity for the past 5 minutes`
+            BodyMessage({
+                bodyMessage: 'ဘယ်သူမှမရှိ​တော့တဲ့အတွက်ခဏ​နေရင်ထွက်ပါ​တော့မယ်။',
+            })
         );
     });
     player.events.on('emptyQueue', (queue) => {
         // Emitted when the player queue has finished
-        queue.metadata.message.channel.send('Queue finished!');
+        queueMap.clear();
+        queue.metadata.message.channel.send(
+            BodyMessage({
+                title: '<:music_player_icon:1154391505918775317> Queue is Empty',
+                bodyMessage: 'သီချင်း​တွေအားလုံးဖွင့်လို့ပြီးသွားပါပြီ။',
+            })
+        );
     });
 
     player.on('debug', async (msg) => {

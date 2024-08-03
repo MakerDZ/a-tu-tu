@@ -2,7 +2,7 @@ import { Message } from 'discord.js';
 import client from '../../../libs/bot';
 import { QueryType, useMainPlayer } from 'discord-player';
 import { botConfig } from '../../../config/bot';
-import { extractSongName } from '../../../utils/player/extracSong';
+import { extractSongName } from '../../../utils/player/extractSong';
 
 export default {
     name: 'play',

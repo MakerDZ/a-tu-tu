@@ -13,6 +13,7 @@ export default {
                 content: `❌ | There is no music currently playing!.`,
                 allowedMentions: { repliedUser: false },
             });
+
         if (playerState.pause) {
             const success = queue.node.resume();
             return success
