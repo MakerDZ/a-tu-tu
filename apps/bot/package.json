@@ -20,7 +20,7 @@
         "@repo/database": "workspace:*",
         "canvas": "^2.11.2",
         "discord-player": "6.6.9-dev.1",
-        "discord-player-youtubei": "^1.2.4",
+        "discord-player-youtubei": "1.2.7-beta.0",
         "discord.js": "^14.15.3",
         "dotenv": "^16.4.5",
         "ffmpeg-static": "^5.0.2",

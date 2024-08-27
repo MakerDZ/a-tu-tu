@@ -1,6 +1,7 @@
 import { Player } from 'discord-player';
 import { Client, GatewayIntentBits, ActivityType, Partials } from 'discord.js';
 import { botConfig } from '../config/bot';
+//@ts-ignore
 import { YoutubeiExtractor } from 'discord-player-youtubei';
 
 const client = new Client({

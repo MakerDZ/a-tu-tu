@@ -81,8 +81,8 @@ importers:
         specifier: 6.6.9-dev.1
         version: 6.6.9-dev.1(@discord-player/extractor@4.5.0)(@discordjs/opus@0.9.0)(ffmpeg-static@5.2.0)
       discord-player-youtubei:
-        specifier: ^1.2.4
-        version: 1.2.4
+        specifier: 1.2.7-beta.0
+        version: 1.2.7-beta.0
       discord.js:
         specifier: ^14.15.3
         version: 14.15.3
@@ -678,6 +678,7 @@ packages:
   '@distube/ytdl-core@4.13.7':
     resolution: {integrity: sha512-xpovwZVPwQ0R4Mrwt/fhh1rqmBjiZ5qj30ck5kz+mQJ5XPzW9dUiTDz89qCxO3YvgbCAqaC5BNNnWiFC2uCV5Q==}
     engines: {node: '>=16'}
+    deprecated: This version is deprecated, please upgrade to the latest version.
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -2779,8 +2780,8 @@ packages:
   discord-api-types@0.37.83:
     resolution: {integrity: sha512-urGGYeWtWNYMKnYlZnOnDHm8fVRffQs3U0SpE8RHeiuLKb/u92APS8HoQnPTFbnXmY1vVnXjXO4dOxcAn3J+DA==}
 
-  discord-player-youtubei@1.2.4:
-    resolution: {integrity: sha512-kx6cXUz5tMUI+2E6ntRUCckCYYgFNWF872l6N3s4W29Jgmm+kkbefytogfsTM06ePncd1MQp6hBHoufr6b1TVQ==}
+  discord-player-youtubei@1.2.7-beta.0:
+    resolution: {integrity: sha512-6/nG7Km9msJix+giLVKUEvvjlwBMCl9EJ14wjUVjhl+3HoMfNWTeW6qMaTF6ZI7n4ivHt3C5ltdsOAvBSl/QCg==}
     hasBin: true
 
   discord-player@6.6.9-dev.1:
@@ -5327,6 +5328,9 @@ packages:
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
+
+  tiny-typed-emitter@2.1.0:
+    resolution: {integrity: sha512-qVtvMxeXbVej0cQWKqVSSAHmKZEHAvxdF8HEUBFWts8h+xEo5m/lEiPakuyZ3BnCBjOD8i24kzNOiOLLgsSxhA==}
 
   tinycolor2@1.6.0:
     resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
@@ -8990,9 +8994,9 @@ snapshots:
 
   discord-api-types@0.37.83: {}
 
-  discord-player-youtubei@1.2.4:
+  discord-player-youtubei@1.2.7-beta.0:
     dependencies:
-      undici: 6.19.5
+      tiny-typed-emitter: 2.1.0
       youtubei.js: 10.3.0
 
   discord-player@6.6.9-dev.1(@discord-player/extractor@4.5.0)(@discordjs/opus@0.9.0)(ffmpeg-static@5.2.0):
@@ -12256,6 +12260,8 @@ snapshots:
     optional: true
 
   through@2.3.8: {}
+
+  tiny-typed-emitter@2.1.0: {}
 
   tinycolor2@1.6.0: {}
 
